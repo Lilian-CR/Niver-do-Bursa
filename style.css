@@ -1,0 +1,174 @@
+@import url("https://db.onlinewebfonts.com/c/85013b49776c144c20bbabcc0374d06a?family=HelveticaNowText-Bold");
+@import url("https://db.onlinewebfonts.com/c/5a29f6809bcaf222ac36b59d5189a38c?family=HelveticaNowText-Regular");
+
+:root {
+  --smaller: 0.75;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "HelveticaNowText-Bold", sans-serif;
+  background-color: #8BA68B;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+/* GIFs */
+.gif-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 50px 0 2rem;
+}
+
+.top-gif {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.top-gif:hover {
+  transform: scale(1.05);
+}
+
+.gif-1 {
+  max-width: 480px;
+}
+
+.gif-2 {
+  max-width: 303px;
+}
+
+.gif-3 {
+  max-width: 480px;
+}
+
+/* Countdown */
+.container {
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin: 30px 0 2rem;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+/* Emojis */
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+
+.emoji span {
+  font-size: 4rem;
+  padding: 0 0.5rem;
+}
+
+/* Balloons */
+#balloons-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 60px;
+  background-color: #ff6b81;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-family: "HelveticaNowText-Regular", sans-serif;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: #8BA68B;
+  opacity: 0.7;
+  background-color: #333;
+}
+
+/* Responsive */
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+
+  .gif-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-gif {
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+}
