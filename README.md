@@ -1,4 +1,4 @@
-# 🎉 Countdown to Bursa's Birthday 🎂
+# 🎉 Countdown to Bursa's Birthday
 
 This is a mini celebration website created with love to count down to **Bursa's birthday**!  
 It shows a countdown to **00:01 Brasília time**, and when the time arrives, you'll see floating balloons and fun emojis. 💕🥳🎉🎂
