@@ -24,7 +24,6 @@ body {
   background-color: #8BA68B;
 }
 
-/* Layout */
 main {
   display: flex;
   flex-direction: column;
@@ -68,7 +67,7 @@ main {
   max-width: 480px;
 }
 
-/* Countdown container */
+/* Countdown */
 .container {
   color: #333;
   text-align: center;
@@ -137,30 +136,28 @@ li span {
   }
 }
 
-/* Birthday card */
+/* Birthday card in-flow */
 .card {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: none;
   background: #fffbe6;
   color: #333;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 2rem auto;
+  max-width: 600px;
   animation: fadeIn 1s ease forwards;
+  font-family: "HelveticaNowText-Regular", sans-serif;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translate(-50%, -60%);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
   }
 }
 
