@@ -5,6 +5,12 @@ It shows a countdown to **00:01 Brasília time**, and when the time arrives, you
 
 ---
 
+## 📸 Preview
+
+![Preview of the site](preview.png)
+
+---
+
 ## 🌟 Built With
 
 - **HTML5**
@@ -16,7 +22,7 @@ It shows a countdown to **00:01 Brasília time**, and when the time arrives, you
 ## 🚀 View it live
 
 Check it out here:  
-👉 [**https://Lilian-CR.github.io/bursa-birthday/**](https://Lilian-CR.github.io/bursa-birthday/)  
+👉 [**https://lilian-CR.github.io/bursa-birthday/**](https://lilian-CR.github.io/bursa-birthday/)  
 
 ---
 
@@ -24,5 +30,5 @@ Check it out here:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Lilian-CR/bursa-birthday.git
+   git clone https://github.com/lilian-CR/bursa-birthday.git
    cd bursa-birthday
