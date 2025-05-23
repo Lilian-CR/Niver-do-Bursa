@@ -136,20 +136,21 @@ li span {
   }
 }
 
+/* Birthday Card */
 .card {
   display: none;
   background: #ffffff;
   color: #333;
   margin: 2rem auto;
-  max-width: 1000px;       /* wider */
-  width: 95%;              /* responsive on smaller screens */
-  border-radius: 0 !important;  /* force remove round corners */
+  max-width: 1000px;
+  width: 95%;
+  border-radius: 0 !important;
   padding: 2rem;
   font-family: "HelveticaNowText-Regular", sans-serif;
   animation: fadeIn 1s ease forwards;
-  line-height: 1.6;        /* easier to read */
-  text-align: center;      /* optional: center the text */
-  word-break: break-word;  /* prevent overflow */
+  line-height: 1.6;
+  text-align: center;
+  word-break: break-word;
 }
 
 @keyframes fadeIn {
