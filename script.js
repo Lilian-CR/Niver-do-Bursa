@@ -1,30 +1,22 @@
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   const second = 1000,
         minute = second * 60,
         hour = minute * 60,
         day = hour * 24;
 
-  const testMode = false;
+  const testMode = true; // ✅ Set to false for real countdown
 
-  function getNextTargetTimeBRT() {
+  function getTargetTimeBrasiliaUTC() {
     const now = new Date();
-
-    // Brasília time Zone
-    const nowInBRT = new Date(now.toLocaleString("en-UK", { timeZone: "America/Sao_Paulo" }));
-    const currentYear = nowInBRT.getFullYear();
-
-    // Target - May 24th, 00:01 BRT (ensures entire 23/05 runs)
-    let targetBRT = new Date(`May 24, ${currentYear} 00:01:00 GMT-0300`);
-
-    // After the target time, set for next year
-    if (nowInBRT > targetBRT) {
-      targetBRT = new Date(`May 24, ${currentYear + 1} 00:01:00 GMT-0300`);
-    }
-
-    return targetBRT.getTime();
+    const brasiliaOffsetMinutes = -180;
+    const tomorrowBrasilia = new Date(now);
+    tomorrowBrasilia.setUTCMinutes(tomorrowBrasilia.getUTCMinutes() + brasiliaOffsetMinutes);
+    tomorrowBrasilia.setUTCDate(tomorrowBrasilia.getUTCDate() + 1);
+    tomorrowBrasilia.setUTCHours(3, 1, 0, 0); // 00:01 BRT = 03:01 UTC
+    return tomorrowBrasilia.getTime();
   }
 
-  let targetTimeUTC = getNextTargetTimeBRT();
+  const targetTimeUTC = getTargetTimeBrasiliaUTC();
 
   const x = setInterval(function () {
     const nowUTC = new Date().getTime();
@@ -36,15 +28,13 @@
       const content = document.getElementById("content");
       const card = document.getElementById("bday-card");
 
-      if (headline) headline.innerText = "O Bursa tá de aniversário! 23/05";
+      if (headline) headline.innerText = "O Bursa tá de aniversário! 23/05/2025";
       if (countdown) countdown.style.display = "none";
       if (content) content.style.display = "block";
       if (card) card.style.display = "block";
 
       launchBalloons();
-
-      // Reseting the target for the upcoming year
-      targetTimeUTC = getNextTargetTimeBRT();
+      clearInterval(x);
       return;
     }
 
@@ -72,4 +62,4 @@
     const colors = ["#ff6b81", "#feca57", "#48dbfb", "#1dd1a1", "#5f27cd"];
     return colors[Math.floor(Math.random() * colors.length)];
   }
-})();
+});
