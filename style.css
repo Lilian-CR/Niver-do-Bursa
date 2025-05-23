@@ -136,15 +136,17 @@ li span {
   }
 }
 
-/* Birthday card in-flow */
 .card {
   display: none;
-  background: #fffbe6;
+  background: #ffffff;
   color: #333;
   margin: 2rem auto;
-  max-width: 900px;
-  animation: fadeIn 1s ease forwards;
+  max-width: 900px;         /* wider card */
+  width: 90%;               /* responsive scaling on small screens */
+  border-radius: 0;         /* remove rounded corners */
+  padding: 2rem;
   font-family: "HelveticaNowText-Regular", sans-serif;
+  animation: fadeIn 1s ease forwards;
 }
 
 @keyframes fadeIn {
