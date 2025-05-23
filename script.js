@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
         hour = minute * 60,
         day = hour * 24;
 
-  const testMode = false; 
-  
+  const testMode = false; // set to true to preview
+
   function getTargetTimeBrasiliaUTC() {
     const now = new Date();
     const brasiliaOffsetMinutes = -180;
@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const nowUTC = new Date().getTime();
     const distance = testMode ? -1 : targetTimeUTC - nowUTC;
 
-    if (distance < 0) {
-      const headline = document.getElementById("headline");
-      const countdown = document.getElementById("countdown");
-      const content = document.getElementById("content");
-      const card = document.getElementById("bday-card");
+    const headline = document.getElementById("headline");
+    const countdown = document.getElementById("countdown");
+    const content = document.getElementById("content");
+    const card = document.getElementById("bday-card");
 
+    if (distance < 0) {
       if (headline) headline.innerText = "O Bursa tá de aniversário! 23/05/2025";
       if (countdown) countdown.style.display = "none";
       if (content) content.style.display = "block";
@@ -38,10 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    document.getElementById("days").innerText = Math.floor(distance / day);
-    document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
-    document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
-    document.getElementById("seconds").innerText = Math.floor((distance % minute) / second);
+    if (document.getElementById("days")) {
+      document.getElementById("days").innerText = Math.floor(distance / day);
+      document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
+      document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
+      document.getElementById("seconds").innerText = Math.floor((distance % minute) / second);
+    }
   }, 1000);
 
   function launchBalloons() {
