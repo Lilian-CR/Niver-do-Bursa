@@ -141,12 +141,15 @@ li span {
   background: #ffffff;
   color: #333;
   margin: 2rem auto;
-  max-width: 900px;         /* wider card */
-  width: 90%;               /* responsive scaling on small screens */
-  border-radius: 0;         /* remove rounded corners */
+  max-width: 1000px;       /* wider */
+  width: 95%;              /* responsive on smaller screens */
+  border-radius: 0 !important;  /* force remove round corners */
   padding: 2rem;
   font-family: "HelveticaNowText-Regular", sans-serif;
   animation: fadeIn 1s ease forwards;
+  line-height: 1.6;        /* easier to read */
+  text-align: center;      /* optional: center the text */
+  word-break: break-word;  /* prevent overflow */
 }
 
 @keyframes fadeIn {
