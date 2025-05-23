@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
         hour = minute * 60,
         day = hour * 24;
 
-  const testMode = true; // ✅ Set to false for real countdown
-
+  const testMode = false; 
+  
   function getTargetTimeBrasiliaUTC() {
     const now = new Date();
     const brasiliaOffsetMinutes = -180;
