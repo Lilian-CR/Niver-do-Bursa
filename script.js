@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hour = minute * 60,
         day = hour * 24;
 
-  const testMode = false; // set to true to preview
+  const testMode = false;
 
   function getTargetTimeBrasiliaUTC() {
     const now = new Date();
