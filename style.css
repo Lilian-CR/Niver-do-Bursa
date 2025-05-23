@@ -141,8 +141,6 @@ li span {
   display: none;
   background: #fffbe6;
   color: #333;
-  padding: 2rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   margin: 2rem auto;
   max-width: 900px;
   animation: fadeIn 1s ease forwards;
