@@ -30,5 +30,5 @@ Check it out here:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/lilian-CR/bursa-birthday.git
+   git clone https://github.com/lilian-CR/Niver-do-Bursa.git
    cd Niver-do-Bursa
