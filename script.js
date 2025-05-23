@@ -13,12 +13,12 @@
     const nowInBRT = new Date(now.toLocaleString("en-UK", { timeZone: "America/Sao_Paulo" }));
     const currentYear = nowInBRT.getFullYear();
 
-    // Target - May 23rd, 23:59 BRT
-    let targetBRT = new Date(`May 23, ${currentYear} 23:59:00 GMT-0300`);
+    // Target - May 24th, 00:01 BRT (ensures entire 23/05 runs)
+    let targetBRT = new Date(`May 24, ${currentYear} 00:01:00 GMT-0300`);
 
     // After the target time, set for next year
     if (nowInBRT > targetBRT) {
-      targetBRT = new Date(`May 23, ${currentYear + 1} 23:59:00 GMT-0300`);
+      targetBRT = new Date(`May 24, ${currentYear + 1} 00:01:00 GMT-0300`);
     }
 
     return targetBRT.getTime();
