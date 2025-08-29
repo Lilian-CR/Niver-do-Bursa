@@ -10,19 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
     return new Date(new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
   }
 
-function getNextBirthdayTime() {
-  const now = getBrasiliaTime();
-  let year = now.getFullYear();
+  function getNextBirthdayTime() {
+    const now = getBrasiliaTime();
+    let year = now.getFullYear();
 
-  const birthdayThisYear = new Date(`${year}-05-23T00:01:00-03:00`).getTime();
-  const nowTime = now.getTime();
+    const birthdayThisYear = new Date(`${year}-05-23T00:01:00-03:00`).getTime();
+    const nowTime = now.getTime();
 
-  // If it's already past May 23, 00:01 BRT, it will move to next year
-  if (nowTime >= birthdayThisYear) {
-    year += 1;
-  }
+    // If now is after this year's birthday, schedule next year's
+    if (nowTime >= birthdayThisYear) {
+      year += 1;
+    }
 
-  return new Date(`${year}-05-23T00:01:00-03:00`).getTime();
+    return new Date(`${year}-05-23T00:01:00-03:00`).getTime();
   }
 
   const targetTimeUTC = getNextBirthdayTime();
@@ -40,7 +40,8 @@ function getNextBirthdayTime() {
     const isMay23 = nowBRT.getMonth() === 4 && nowBRT.getDate() === 23;
 
     if (isMay23 || testMode) {
-      if (headline) headline.innerText = "O Bursa tá de aniversário! 23/05/2025";
+      const birthdayYear = new Date(targetTimeUTC).getFullYear();
+      if (headline) headline.innerText = `O Bursa tá de aniversário! 23/05/${birthdayYear}`;
       if (countdown) countdown.style.display = "none";
       if (content) content.style.display = "block";
       if (card) card.style.display = "block";
