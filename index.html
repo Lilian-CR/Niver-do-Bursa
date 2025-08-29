@@ -42,10 +42,18 @@
     </div>
   </main>
 
-  <footer>
-    By Lilian Rodrigues 🥰 – May 2025
-  </footer>
+<footer>
+  By Lilian Rodrigues 🥰 – <span id="year"></span>
+</footer>
 
-<script src="script.js?v=3" defer></script>
+  <script>
+  // Set footer year dynamically
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = `May ${currentYear}`;
+  }
+</script>
+  
 </body>
 </html>
