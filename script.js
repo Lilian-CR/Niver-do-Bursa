@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const testMode = false;
 
   function getBrasiliaTime() {
-    return new Date(new Date().toLocaleString("en-GB", { timeZone: "America/Porto_Alegre" }));
+    return new Date(new Date().toLocaleString("en-GB", { timeZone: "America/Sao_Paulo" }));
   }
 
   function getNextBirthdayTime() {
