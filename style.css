@@ -54,8 +54,8 @@ main {
 /* Set fixed width + height for GIFs 1 and 3 */
 .gif-1,
 .gif-3 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
 /* GIF 2 will match height */
