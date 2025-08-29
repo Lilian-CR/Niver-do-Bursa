@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const testMode = false;
 
   function getBrasiliaTime() {
+    // Uses Sao_Paulo (BRT) since Porto_Alegre was invalid
     return new Date(new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
   }
 
@@ -14,15 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const now = getBrasiliaTime();
     let year = now.getFullYear();
 
-    const birthdayThisYear = new Date(`${year}-05-23T00:01:00-03:00`).getTime();
+    // Target birthday time: May 23rd 00:01 BRT = May 23rd 03:01 UTC
+    const birthdayThisYear = Date.UTC(year, 4, 23, 3, 1, 0);
     const nowTime = now.getTime();
 
-    // If the birthday already passed this year, the next year will be avtivated
     if (nowTime >= birthdayThisYear) {
       year += 1;
     }
 
-    return new Date(`${year}-05-23T00:01:00-03:00`).getTime();
+    return Date.UTC(year, 4, 23, 3, 1, 0);
   }
 
   const targetTimeUTC = getNextBirthdayTime();
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nowBRT = getBrasiliaTime();
     const distance = testMode ? -1 : targetTimeUTC - nowUTC;
 
-    // DEBUG INFO
+    // Debug info
     console.log("BRT Date:", nowBRT);
     console.log("nowUTC:", nowUTC);
     console.log("targetTimeUTC:", targetTimeUTC);
@@ -57,9 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Updating countdown numbers on screen
     if (document.getElementById("days")) {
-      console.log("Updating countdown...");
       document.getElementById("days").innerText = Math.floor(distance / day);
       document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
       document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 1000);
 
-  // Launch balloons on birthday celebration day
   function launchBalloons() {
     const container = document.getElementById("balloons-container");
     if (!container) return;
