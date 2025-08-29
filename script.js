@@ -10,11 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
     return new Date(new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
   }
 
-  function getNextBirthdayTime() {
-    const now = getBrasiliaTime();
-    const year = now.getMonth() === 4 && now.getDate() >= 24 ? now.getFullYear() + 1 : now.getFullYear();
-    const dateStr = `${year}-05-23T00:01:00-03:00`; // May 23, 00:01 BRT
-    return new Date(dateStr).getTime();
+function getNextBirthdayTime() {
+  const now = getBrasiliaTime();
+  let year = now.getFullYear();
+
+  const birthdayThisYear = new Date(`${year}-05-23T00:01:00-03:00`).getTime();
+  const nowTime = now.getTime();
+
+  // If it's already past May 23, 00:01 BRT, it will move to next year
+  if (nowTime >= birthdayThisYear) {
+    year += 1;
+  }
+
+  return new Date(`${year}-05-23T00:01:00-03:00`).getTime();
   }
 
   const targetTimeUTC = getNextBirthdayTime();
