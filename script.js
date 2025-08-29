@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const isMay23 = nowBRT.getMonth() === 4 && nowBRT.getDate() === 23;
 
-    if (distance < 0 || isMay23 || testMode) {
+    if (isMay23 || testMode) {
       if (headline) headline.innerText = "O Bursa tá de aniversário! 23/05/2025";
       if (countdown) countdown.style.display = "none";
       if (content) content.style.display = "block";
