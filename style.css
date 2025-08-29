@@ -58,9 +58,9 @@ main {
   height: 300px;
 }
 
-/* GIF 2 will scale to match height */
+/* GIF 2 will match height */
 .gif-2 {
-  height: 300px;
+  height: 400px;
   width: auto;
 }
 
