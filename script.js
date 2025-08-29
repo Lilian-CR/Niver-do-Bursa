@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hour = minute * 60,
         day = hour * 24;
 
-  const testMode = true;
+  const testMode = false;
 
   function getBrasiliaTime() {
     return new Date(new Date().toLocaleString("en-GB", { timeZone: "America/Porto_Alegre" }));
