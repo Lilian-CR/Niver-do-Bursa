@@ -36,17 +36,13 @@ main {
 .gif-row {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
   margin: 50px 0 2rem;
 }
 
 .top-gif {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -55,16 +51,17 @@ main {
   transform: scale(1.05);
 }
 
-.gif-1 {
-  max-width: 480px;
-}
-
-.gif-2 {
-  max-width: 303px;
-}
-
+/* Set fixed width + height for GIFs 1 and 3 */
+.gif-1,
 .gif-3 {
-  max-width: 480px;
+  width: 300px;
+  height: 300px;
+}
+
+/* GIF 2 will scale to match height */
+.gif-2 {
+  height: 300px;
+  width: auto;
 }
 
 /* Countdown */
@@ -196,7 +193,8 @@ footer {
   }
 
   .top-gif {
-    max-width: 250px;
+    width: 250px !important;
+    height: auto !important;
     margin-bottom: 1rem;
   }
 }
